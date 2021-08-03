@@ -1,0 +1,19 @@
+
+{% extends "base/paginated.html" %}
+{% load static %}
+{% block paginated %}
+
+    <div id="posts">
+        {% for post in posts %}
+            <p class="post">
+                <span class="date">{{ post.date_posted }}</span>
+                <br>
+                <a href="{{ post.relative_url }}">{{ post.title }}</a>
+                <br>
+                <p class="snippet">{{ post.content }}</p>
+            </p>
+        {% endfor %}
+
+    </div>
+
+{% endblock paginated %}

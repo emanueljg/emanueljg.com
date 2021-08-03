@@ -1,0 +1,56 @@
+
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+
+    <div style='margin-top: 2ch;'>
+        <a href="./../../../" style='float:left;'><<<</a>  
+        <div style='width: 50%; margin: 0 auto;'>
+            <a href={{ first }}><<</a>
+
+            {% if previous_page %}
+                <a href={{ previous }}><</a> 
+            {% else %}
+                <a style="visibility: hidden;" href={{ previous }}><</a>
+            {% endif %}
+
+            {{ current }}
+
+            {% if next_page %}
+                <a href={{ next }}><</a> 
+            {% else %}
+                <a style="visibility: hidden;" href={{ next }}><</a>
+            {% endif %}     
+
+            <a href={{ last }}>>></a>
+
+        </div>
+    </div>
+
+    {% block paginated %}{% endblock %}
+
+    <div style='margin-top: 2ch;'>
+        <a href="./../../../" style='float:left;'><<<</a>  
+        <div style='width: 50%; margin: 0 auto;'>
+            <a href={{ first }}><<</a>
+
+            {% if previous_page %}
+                <a href={{ previous }}><</a> 
+            {% else %}
+                <a style="visibility: hidden;" href={{ previous }}><</a>
+            {% endif %}
+
+            {{ current }}
+
+            {% if next_page %}
+                <a href={{ next }}><</a> 
+            {% else %}
+                <a style="visibility: hidden;" href={{ next }}><</a>
+            {% endif %}     
+
+            <a href={{ last }}>>></a>
+
+        </div>
+    </div>
+
+{% endblock content %}
